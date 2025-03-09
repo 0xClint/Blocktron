@@ -1,0 +1,25 @@
+{
+  "theme": "GREEN",
+  "tilesWidth": 8,
+  "tilesHeight": 8,
+  "placements": [
+    { "type": "HERO", "x": 2, "y": 2 },
+    { "type": "GOAL", "x": 8, "y": 8 },
+    { "type": "WATER", "x": 6, "y": 6 },
+    { "type": "WATER", "x": 6, "y": 7 },
+    { "type": "WATER", "x": 6, "y": 8 },
+    { "type": "WATER", "x": 7, "y": 6 },
+    { "type": "WATER", "x": 8, "y": 6 },
+    { "type": "WATER_PICKUP", "x": 4, "y": 6 },
+    { "type": "WALL", "x": 3, "y": 7 },
+    { "type": "WALL", "x": 4, "y": 7 },
+    { "type": "WALL", "x": 5, "y": 7 },
+    { "type": "WALL", "x": 5, "y": 6 },
+    { "type": "WALL", "x": 5, "y": 5 },
+    { "type": "WALL", "x": 6, "y": 5 },
+    { "type": "WALL", "x": 7, "y": 5 },
+    { "type": "FLOUR", "x": 4, "y": 4 },
+    { "type": "FLOUR", "x": 4, "y": 2 },
+    { "type": "FLOUR", "x": 5, "y": 4 }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "theme": "YELLOW",
+  "tilesWidth": 8,
+  "tilesHeight": 8,
+  "placements": [
+    { "type": "HERO", "x": 2, "y": 2 },
+    { "type": "GOAL", "x": 8, "y": 8 },
+    { "type": "WALL", "x": 3, "y": 7 },
+    { "type": "WALL", "x": 4, "y": 7 },
+    { "type": "WALL", "x": 4, "y": 5 },
+    { "type": "WALL", "x": 5, "y": 5 },
+    { "type": "WALL", "x": 6, "y": 5 },
+    { "type": "WALL", "x": 8, "y": 5 },
+    { "type": "WALL", "x": 7, "y": 5 },
+    { "type": "FLOUR", "x": 4, "y": 4 },
+    { "type": "FLOUR", "x": 7, "y": 2 },
+    { "type": "FLOUR", "x": 3, "y": 6 },
+    { "type": "FLOUR", "x": 1, "y": 8 },
+    { "type": "GROUND_ENEMY", "x": 2, "y": 5 }
+  ]
+}

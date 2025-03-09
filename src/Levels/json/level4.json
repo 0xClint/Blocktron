@@ -1,0 +1,32 @@
+{
+  "theme": "GREEN",
+  "tilesWidth": 8,
+  "tilesHeight": 8,
+  "placements": [
+    { "type": "HERO", "x": 1, "y": 1 },
+    { "type": "GOAL", "x": 8, "y": 8 },
+    { "type": "WALL", "x": 5, "y": 1 },
+    { "type": "WALL", "x": 5, "y": 1 },
+    { "type": "WALL", "x": 5, "y": 2 },
+    { "type": "WALL", "x": 5, "y": 3 },
+    { "type": "WALL", "x": 5, "y": 4 },
+    { "type": "WALL", "x": 5, "y": 5 },
+    { "type": "WALL", "x": 5, "y": 6 },
+    { "type": "WALL", "x": 5, "y": 7 },
+    { "type": "WALL", "x": 5, "y": 8 },
+    { "type": "WALL", "x": 4, "y": 5 },
+    { "type": "WALL", "x": 5, "y": 5 },
+    { "type": "WALL", "x": 3, "y": 5 },
+    { "type": "WALL", "x": 2, "y": 5 },
+    { "type": "WALL", "x": 1, "y": 5 },
+    { "type": "FLOUR", "x": 4, "y": 4 },
+    { "type": "TELEPORT", "x": 1, "y": 4 },
+    { "type": "TELEPORT", "x": 8, "y": 1 },
+    { "type": "TELEPORT", "x": 1, "y": 6 },
+    { "type": "FLOUR", "x": 6, "y": 1 },
+    { "type": "FLOUR", "x": 6, "y": 6 },
+    { "type": "FLOUR", "x": 1, "y": 8 },
+    { "type": "FLYING_ENEMY", "x": 3, "y": 8 },
+    { "type": "GROUND_ENEMY", "x": 3, "y": 3 }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "theme": "GREEN",
+  "tilesWidth": 40,
+  "tilesHeight": 20,
+  "placements": [
+    {
+      "id": 0,
+      "x": 2,
+      "y": 2,
+      "type": "HERO"
+    },
+    {
+      "id": 1,
+      "x": 6,
+      "y": 4,
+      "type": "GOAL"
+    },
+    {
+      "id": 2,
+      "x": 4,
+      "y": 4,
+      "type": "WALL"
+    },
+    {
+      "id": 3,
+      "x": 5,
+      "y": 2,
+      "type": "WALL"
+    },
+    {
+      "id": 4,
+      "x": 6,
+      "y": 6,
+      "type": "WALL"
+    },
+    {
+      "id": 5,
+      "x": 4,
+      "y": 3,
+      "type": "FLOUR"
+    },
+    {
+      "id": 6,
+      "x": 5,
+      "y": 3,
+      "type": "FLOUR"
+    },
+    {
+      "id": 7,
+      "x": 4,
+      "y": 6,
+      "type": "FLOUR"
+    },
+    {
+      "id": 7,
+      "x": 4,
+      "y": 6,
+      "type": "FLOUR"
+    }
+  ]
+}

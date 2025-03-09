@@ -1,0 +1,52 @@
+{
+  "theme": "BLUE",
+  "tilesWidth": 8,
+  "tilesHeight": 8,
+  "placements": [
+    {
+      "x": 2,
+      "y": 2,
+      "type": "HERO"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "type": "GOAL"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "type": "WATER"
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "type": "WALL"
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "type": "FLOUR"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "type": "ICE_PICKUP"
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "type": "FIRE"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "type": "THIEF"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "type": "CIABATTA"
+    }
+  ]
+}
