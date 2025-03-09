@@ -20,21 +20,20 @@ export const shortenAddress = (address, length = 4) => {
   return `${start}...${end}`;
 };
 
-export const filterNftTokens = (data, address) => {
-  const firstOccurrenceMap = new Map();
+export const filterNftTokens = (transactions, address) => {
+  const ownership = new Map();
 
-  data.forEach((item) => {
-    const tokenId = Number(item.tokenID);
+  transactions.forEach((tx) => {
+    const tokenId = tx.tokenID;
 
-    if (
-      item.to.toLowerCase() === address.toLowerCase() &&
-      !firstOccurrenceMap.has(tokenId)
-    ) {
-      firstOccurrenceMap.set(tokenId, tokenId);
+    if (!ownership.has(tokenId)) {
+      ownership.set(tokenId, tx.to);
     }
   });
 
-  return Array.from(firstOccurrenceMap.values());
+  return [...ownership.entries()]
+    .filter(([_, owner]) => owner.toLowerCase() === address.toLowerCase())
+    .map(([tokenId, _]) => tokenId);
 };
 
 export const extractIpfsHash = (url) => {

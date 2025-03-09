@@ -18,7 +18,7 @@ const Levels = () => {
         <div className=" w-screen h-screen flex-col">
           <Header />
           <div className="h-full flex-center pb-10">
-            <div className="w-[300px] card-container text-[#8A664E]  p-4">
+            <div className="w-[300px] card-container text-[#e4a776]  p-4">
               <h2 className="w-full bg-tertiary text-white py-2  rounded text-center">
                 Levels
               </h2>
@@ -29,7 +29,7 @@ const Levels = () => {
                       key={itemURI}
                       disabled={userLevels < index}
                       onClick={() => route.push(`/levels/${itemURI}`)}
-                      className="relative flex-center text-center hover:bg-[#e2995c] cursor-pointer rounded p-2"
+                      className="relative flex-center text-center hover:bg-[#af876c] cursor-pointer rounded p-2"
                     >
                       Level {index + 1}
                       {userLevels < index && (

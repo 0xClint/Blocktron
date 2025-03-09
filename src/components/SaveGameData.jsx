@@ -50,7 +50,7 @@ const SaveGameData = ({ level, setLoader }) => {
       )}
       <button
         onClick={() => handleSaveGame()}
-        className="bg-secondary text-[#8A664E] ease-in duration-100 hover:scale-105 border-2 border-black rounded-md py-2 px-4"
+        className="bg-tertiary text-white ease-in duration-100 hover:scale-105 border-2 border-black rounded-md py-2 px-4"
       >
         Save
       </button>

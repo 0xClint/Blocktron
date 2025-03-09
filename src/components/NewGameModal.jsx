@@ -7,6 +7,7 @@ import { uploadFile } from "@/utils/lighthouse";
 import { Loader } from ".";
 import { useRouter } from "next/router";
 import { LabelIcon } from "@/assets/Icons";
+import { RxCross2 } from "react-icons/rx";
 
 const NewGameModal = ({ isOpen, setIsOpen }) => {
   const { createLand, lands } = useGame();
@@ -50,7 +51,7 @@ const NewGameModal = ({ isOpen, setIsOpen }) => {
               onClick={() => setIsOpen(false)}
               className="w-5 h-5 absolute top-[14px] right-4 hover:cursor-pointer"
             >
-              X
+              <RxCross2 className="text-xl"/>
             </span>
             <span className="font-inter font-regular text-lg text-center">
               Create Land
@@ -78,7 +79,7 @@ const NewGameModal = ({ isOpen, setIsOpen }) => {
                           <div
                             key={cid}
                             onClick={() => router.push(`/land/${cid}`)}
-                            className="relative flex-center text-center hover:bg-[#e2995c] cursor-pointer rounded p-2"
+                            className="relative flex-center text-center hover:bg-[#af876c] cursor-pointer rounded p-2"
                           >
                             {name}
                           </div>
@@ -89,10 +90,7 @@ const NewGameModal = ({ isOpen, setIsOpen }) => {
                   )}
                 </div>
               </div>
-              <button
-                type="submit"
-                className="w-full border-2 border-tertiary hover:scale-[101%] text-white py-1  rounded text-center"
-              >
+              <button type="submit" className="btn hover:scale-[101%]">
                 Submit
               </button>
             </form>

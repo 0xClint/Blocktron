@@ -53,9 +53,9 @@ canvas {
     /* display: flex;
     align-items: center;
     justify-content: center; */
-    color: #8a664e;
+    color: white;
     padding: 5px;
-    background: rgba(var(--color-secondary));
+    background: rgba(var(--color-tertiary));
     border-radius: 5px;
     border: 2px solid black;
   }
@@ -65,18 +65,18 @@ canvas {
     justify-content: center;
   }
   .btn {
-    --tw-shadow: 3px -4px 0px 0px rgba(125, 125, 125, 0.21) inset;
+    /* --tw-shadow: 3px -4px 0px 0px rgba(125, 125, 125, 0.21) inset;
     --tw-shadow-colored: inset 3px -4px 0px 0px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    padding-left: 0.75rem /* 12px */;
-    padding-right: 0.75rem /* 12px */;
-    padding-top: 0.5rem /* 8px */;
-    padding-bottom: 0.5rem /* 8px */;
-    background-color: theme("colors.white");
-    border: 2px solid rgb(113, 113, 113);
-    border-radius: 0.5rem;
-    font-size: 0.8rem;
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); */
+    padding: 4px 0;
+    text-align: center;
+    width: 100%;
+    background-color: #8a664e;
+    /* background-color: #a16a0400; */
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
   }
 }
 

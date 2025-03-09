@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/contexts/GameProvider";
 import { useRouter } from "next/router";
+import { RxCross2 } from "react-icons/rx";
 
 const MyLands = ({ isOpen, setIsOpen }) => {
   const { lands } = useGame();
@@ -35,7 +36,7 @@ const MyLands = ({ isOpen, setIsOpen }) => {
               onClick={() => setIsOpen(false)}
               className="w-5 h-5 absolute top-[14px] right-4 hover:cursor-pointer"
             >
-              X
+              <RxCross2 className="text-xl" />
             </span>
             <span className="font-inter font-regular text-lg text-center">
               My Lands
@@ -48,7 +49,7 @@ const MyLands = ({ isOpen, setIsOpen }) => {
                       <div
                         key={cid}
                         onClick={() => router.push(`/land/${cid}`)}
-                        className="relative flex-center text-center hover:bg-[#e2995c] cursor-pointer rounded p-2"
+                        className="relative flex-center text-center hover:bg-[#af876c] cursor-pointer rounded p-2"
                       >
                         {name}
                       </div>

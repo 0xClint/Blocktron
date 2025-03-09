@@ -1,3 +1,4 @@
+import { BlockTronName } from "@/assets/Icons";
 import soundsManager, { SFX } from "@/classes/Sounds";
 import {
   ControlsModal,
@@ -35,7 +36,7 @@ export default function Page() {
           {/* <div className="h-full flex-center justify-center flex-col"> */}
           <div className="relative h-full flex-center gap-10 flex-col pb-10">
             <img
-              src="./blocktron.png"   
+              src="./blocktron.png"
               className="absolute top-48 h-10 mx-auto"
             />
             <div className="w-full flex-center flex-col gap-3 text-[#866149]">

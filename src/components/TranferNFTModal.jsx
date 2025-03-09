@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Loader } from ".";
 import { useGame } from "@/contexts/GameProvider";
-import { getContractByAddress } from "@/helpers/convertor";
-import axios from "axios";
-import { WORLD_SPACE_CONTRACT_ADDRESS } from "@/contracts/conts";
+import { RxCross2 } from "react-icons/rx";
 
 const TranferNFTModal = ({ isOpen, setIsOpen }) => {
   const [transferNFTModal, setTransferNFTModal] = useState(null);
@@ -51,7 +49,7 @@ const TranferNFTModal = ({ isOpen, setIsOpen }) => {
               onClick={() => setIsOpen(false)}
               className="w-5 h-5 absolute top-[14px] right-4 hover:cursor-pointer"
             >
-              X
+              <RxCross2 className="text-xl" />
             </span>
             <span className="font-inter font-regular text-lg text-center">
               Transfer Land NFT
@@ -81,11 +79,11 @@ const TranferNFTModal = ({ isOpen, setIsOpen }) => {
                       Select a land
                     </option>
                     {lands?.length ? (
-                      lands.map(({ name, uri, identifier }) => {
+                      lands.map(({ name, cid, tokenID }) => {
                         // console.log(identifier);
-                        if (uri != null)
+                        if (cid != null)
                           return (
-                            <option key={uri} value={identifier}>
+                            <option key={cid} value={tokenID}>
                               {name}
                             </option>
                           );
@@ -96,10 +94,7 @@ const TranferNFTModal = ({ isOpen, setIsOpen }) => {
                   </select>
                 </div>
               </div>
-              <button
-                type="submit"
-                className="w-full border-2 border-tertiary hover:scale-[101%] text-white py-1  rounded text-center"
-              >
+              <button type="submit" className="btn hover:scale-[101%]">
                 Submit
               </button>
             </form>

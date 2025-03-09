@@ -20,8 +20,8 @@ const EditorDropdown = ({ level }) => {
   }
 
   return (
-    <div className="absolute card-container right-2 flex flex-col gap-1">
-      <span className="scale-[0.5] text-[#694933] w-10">Editor</span>
+    <div className="absolute card-container right-2 text-white flex flex-col gap-1">
+      <span className="scale-[0.8] font-normal w-10">Editor</span>
       <div className=" flex justify-center w-[80px]  max-h-[400px] flex-wrap gap-1.5">
         {editorData.map(({ id, trait, frameCoord, levelCap, value }) => {
           const isOpen = levelCap <= userLevels;
@@ -32,7 +32,7 @@ const EditorDropdown = ({ level }) => {
                 onClick={() => {
                   if (isOpen) handleOnSelect(value, trait);
                 }}
-                className={`p-[4px] border border-black rounded-sm  ${
+                className={`p-[4px] border border-white rounded-sm  ${
                   !isOpen && "opacity-30"
                 }  ${
                   activeSprite == value &&

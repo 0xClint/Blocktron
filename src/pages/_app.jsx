@@ -1,4 +1,5 @@
 import "@/styles/global.css";
+import { useEffect } from "react";
 import { RecoilRoot } from "recoil";
 import { Layout } from "@/components";
 import { GameContextProvider } from "@/contexts/GameProvider";
@@ -11,9 +12,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }) {
-  // useEffect(() => {
-  //   soundsManager.init();
-  // }, []);
+  useEffect(() => {
+    soundsManager.init();
+  }, []);
 
   return (
     <NextUIProvider>

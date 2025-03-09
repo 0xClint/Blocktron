@@ -133,28 +133,27 @@ const GameProviderFn = () => {
 
   const transferNFT = useCallback(
     async (to, tokenID) => {
-      console.log(account, to, tokenID);
+      if (account.address) {
+        try {
+          const { request } = await simulateContract(wagmiConfig, {
+            abi: WORLD_SPACE_CONTRACT_ABI,
+            address: WORLD_SPACE_CONTRACT_ADDRESS,
+            functionName: "transferFrom",
+            args: [account.address, to, Number(tokenID)],
+          });
 
-      if (account) {
-        const encodedTransferCall = encodeFunctionData({
-          abi: WORLD_SPACE_CONTRACT_ABI,
-          functionName: "transferFrom",
-          args: [account, to, tokenID],
-        });
+          const approveResult = await writeContract(wagmiConfig, request);
+          console.log(approveResult);
 
-        const requestData = {
-          network_name: "POLYGON_TESTNET_AMOY",
-          transaction: {
-            from: account,
-            to: WORLD_SPACE_CONTRACT_ADDRESS,
-            data: encodedTransferCall,
-            value: "0x0",
-          },
-        };
-
-        const response = await executeRawTransaction(requestData);
-        console.log(response);
-        await transactionListener(response.jobId);
+          const approveReceipt = await waitForTransactionReceipt(wagmiConfig, {
+            hash: approveResult,
+            chainId: coreDaoTestnet.id,
+          });
+          console.log(approveReceipt);
+        } catch (e) {
+          console.log(e);
+          console.log(e.name);
+        }
         await getAllLands();
       } else {
         console.log("Your are on wrong world url!");
@@ -183,53 +182,17 @@ const GameProviderFn = () => {
             chainId: coreDaoTestnet.id,
           });
           console.log(approveReceipt);
-          await getAllLands();
         } catch (e) {
           console.log(e);
           console.log(e.name);
         }
+        await getAllLands();
       } else {
         console.log("Your are on wrong world url!");
       }
     },
     [account]
   );
-
-  const transactionListener = (job_id) => {
-    return new Promise((resolve, reject) => {
-      const intervalId = setInterval(async () => {
-        try {
-          const data = await getRawTransactionStatus({ order_id: job_id });
-
-          console.log("RUNNING...");
-
-          if (data.jobs[0] && data.jobs[0].status === "PUBLISHED") {
-            console.log("SUCCESS received, stopping interval.");
-            console.log(data.jobs[0]);
-            clearInterval(intervalId);
-            clearTimeout(timeoutId);
-            resolve("Transaction successful");
-          }
-        } catch (error) {
-          clearInterval(intervalId);
-          clearTimeout(timeoutId);
-          reject("Error in transaction listener: " + error);
-        }
-      }, 3000);
-
-      const timeoutId = setTimeout(() => {
-        console.log("END! Stopping interval.");
-        clearInterval(intervalId);
-        reject("Transaction timed out after 50 seconds");
-      }, 50000);
-    });
-  };
-
-  const fetchRawTransactionStatus = async (jobId) => {
-    const data = await getRawTransactionStatus({ order_id: jobId });
-
-    console.log(data.jobs[0]);
-  };
 
   //**********************getter****************** */
 
@@ -262,8 +225,6 @@ const GameProviderFn = () => {
           action: "tokennfttx",
           contractaddress: WORLD_SPACE_CONTRACT_ADDRESS,
           address: account.address,
-          page: 1,
-          offset: 5,
           startblock: 2781789,
           endblock: 999999999,
           sort: "desc",
@@ -271,13 +232,14 @@ const GameProviderFn = () => {
         },
       });
       if (response.data.result === null) return;
+      console.log("[token events] : ", response.data.result);
       const result = filterNftTokens(response.data.result, account.address);
-      console.log(result);
+      console.log("[tokenIDs] : ", result);
 
       const arr = await Promise.all(
         result.map((tokenID) => getMetaData(tokenID))
       );
-      console.log("Metadata Array:", arr);
+      console.log("[user lands] : ", arr);
 
       setLands(arr);
     } catch (error) {
@@ -343,7 +305,6 @@ const GameProviderFn = () => {
     userLevels,
     gameLevels,
     saveLevelData,
-    fetchRawTransactionStatus,
     transferNFT,
   };
 };

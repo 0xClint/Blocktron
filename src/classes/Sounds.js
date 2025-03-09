@@ -48,17 +48,16 @@ export class Sounds {
     const howl = this.howls[key];
 
     // Play it with current volume setting
-    // howl.volume(this.sfxVolume);
-    // howl.play();
+    howl.volume(this.sfxVolume);
+    howl.play();
   }
 
   //*******************Theme Songs  */
   playTheme() {
     const themeHowl = this.theme;
     if (themeHowl && !this._isThemePlaying) {
-
       themeHowl.play();
-      this._isThemePlaying = true; 
+      this._isThemePlaying = true;
     }
   }
 

@@ -1,5 +1,5 @@
 import { currentLevelIdAtom } from "@/atoms/currentLevelIdAtom";
-import LevelsMap from "@/Levels/LevelsMap";
+
 import { useRecoilState } from "recoil";
 import styles from "@/components/hud/PopupMessage.module.css";
 import LevelCompleted from "../object-graphics/LevelCompleted";

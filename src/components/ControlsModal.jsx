@@ -1,6 +1,7 @@
 import ReactDom from "react-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { RxCross2 } from "react-icons/rx";
 
 const ControlsModal = ({ isOpen, setIsOpen }) => {
   const [controlModal, setControlModal] = useState(null);
@@ -29,7 +30,7 @@ const ControlsModal = ({ isOpen, setIsOpen }) => {
               onClick={() => setIsOpen(false)}
               className="w-5 h-5 absolute top-[14px] right-4 hover:cursor-pointer"
             >
-              X
+              <RxCross2 className="text-xl" />
             </span>
             <span className="font-inter font-regular text-lg text-center">
               Controls
