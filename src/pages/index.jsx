@@ -37,7 +37,7 @@ export default function Page() {
           <div className="relative h-full flex-center gap-10 flex-col pb-10">
             <img
               src="./blocktron.png"
-              className="absolute top-48 h-10 mx-auto"
+              className="absolute top-[14%] h-10 mx-auto"
             />
             <div className="w-full flex-center flex-col gap-3 text-[#866149]">
               <button
